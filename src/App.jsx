@@ -12,7 +12,6 @@ function App() {
     mana: '',
     attack: '',
     armor: '',
-    magic: '',
     speed: '',
     image: '',
     trunfo: false,
@@ -30,8 +29,10 @@ function App() {
   return (
     <>
       <Header />
-      <Form data={data} handleChange={handleChange} />
-      <Card />
+      <section className='flex justify-between gap-3' >  
+        <Form data={data} handleChange={handleChange} />
+        <Card data={data} />
+      </section>
       <Preview />
       <Footer />
     </>

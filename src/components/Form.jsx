@@ -15,8 +15,8 @@ const Form = ({ data, handleChange }) => {
   } = data;
 
   return (
-    <section>
-      <form className="flex flex-col mt-10 space-y-6">
+    <section className='max-w-sm'>
+      <form className="flex flex-col space-y-6">
         <label htmlFor="name" className='flex justify-between gap-3'>
           <span className="font-bold self-center">Nome:</span>
           <input value={name} onChange={handleChange} type="text" name="name" className="form-input border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" />
@@ -49,13 +49,6 @@ const Form = ({ data, handleChange }) => {
               <GiAbdominalArmor className='text-2xl self-center' />
             </span>
             <input value={armor} onChange={handleChange} type="number" name="armor" id="armor" className="form-input w-3/4 border-0 border-b-2 text-center text-sm border-gray-200 focus:ring-0 focus:border-black" />
-          </label>
-
-          <label htmlFor="magic" className="flex w-full justify-between gap-3">
-            <span className="font-bold text-pink-400 self-center">
-              <GiMagicPalm className='text-2xl self-center' />
-            </span>
-            <input value={magic} onChange={handleChange} type="number" name="magic" id="magic" className="form-input w-3/4 border-0 border-b-2 text-center text-sm border-gray-200 focus:ring-0 focus:border-black" />
           </label>
 
           <label htmlFor="speed" className="flex w-full justify-between gap-3">
