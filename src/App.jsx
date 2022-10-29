@@ -27,7 +27,7 @@ function App() {
   return (
     <>
       <Header />
-      <Form data={data} handleChange={handleChange} />
+      <Form data={data} />
       <Card />
       <Preview />
       <Footer />
