@@ -18,16 +18,19 @@ function App() {
     trunfo: false,
     saved: [],
   });
-  const [query, setQuery] = useState([]);
 
   const handleChange = (e) => {
-    console.log('change');
+    const { name, value, checked, type } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: type === 'checkbox' ? checked : value,
+    }))
   };
 
   return (
     <>
       <Header />
-      <Form data={data} />
+      <Form data={data} handleChange={handleChange} />
       <Card />
       <Preview />
       <Footer />
