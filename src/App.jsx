@@ -1,9 +1,37 @@
+import { useState } from 'react'
+import Header from "./components/Header"
+import Form from "./components/Form"
+import Card from "./components/Card"
+import Preview from "./components/Preview"
+import Footer from "./components/Footer"
+
 function App() {
+  const [data, setData] = useState({
+    name: '',
+    hp: '',
+    mana: '',
+    attack: '',
+    armor: '',
+    magic: '',
+    speed: '',
+    image: '',
+    trunfo: false,
+    saved: [],
+  });
+  const [query, setQuery] = useState([]);
+
+  const handleChange = (e) => {
+    console.log('change');
+  };
 
   return (
-    <div >
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Header />
+      <Form data={data} handleChange={handleChange} />
+      <Card />
+      <Preview />
+      <Footer />
+    </>
   )
 }
 
