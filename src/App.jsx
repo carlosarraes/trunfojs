@@ -14,6 +14,7 @@ function App() {
     armor: '',
     speed: '',
     image: '',
+    rarity: '',
     trunfo: false,
     saved: [],
   });
@@ -29,7 +30,7 @@ function App() {
   return (
     <>
       <Header />
-      <section className='flex justify-between gap-3' >  
+      <section className='flex justify-between gap-12' >  
         <Form data={data} handleChange={handleChange} />
         <Card data={data} />
       </section>

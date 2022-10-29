@@ -6,7 +6,7 @@ export const data = [
     attack: '50',
     armor: '19',
     speed: '335',
-    image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
+    rarity: 'legendary',
     trunfo: false,
   },
   {
@@ -16,7 +16,27 @@ export const data = [
     attack: '62',
     armor: '29',
     speed: '330',
-    image: 'https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg',
+    rarity: 'epic',
     trunfo: false,
-  }
+  },
+  {
+    name: 'Bard',
+    hp: '630',
+    mana: '350',
+    attack: '52',
+    armor: '34',
+    speed: '330',
+    rarity: 'rare',
+    trunfo: false,
+  },
+  {
+    name: 'Blitzcrank',
+    hp: '653',
+    mana: '267',
+    attack: '60',
+    armor: '40',
+    speed: '325',
+    rarity: 'normal',
+    trunfo: false,
+  },
 ]

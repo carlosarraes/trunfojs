@@ -1,4 +1,4 @@
-import { GiCrossedSwords, GiMagicPalm, GiAbdominalArmor, GiMagicPotion, GiWalkingBoot, GiHealthPotion } from 'react-icons/gi'
+import { GiCrossedSwords, GiAbdominalArmor, GiMagicPotion, GiWalkingBoot, GiHealthPotion } from 'react-icons/gi'
 import { AiOutlineLink } from 'react-icons/ai'
 
 const Form = ({ data, handleChange }) => {
@@ -8,9 +8,9 @@ const Form = ({ data, handleChange }) => {
     mana,
     attack,
     armor,
-    magic,
     speed,
     image,
+    rarity,
     trunfo 
   } = data;
 

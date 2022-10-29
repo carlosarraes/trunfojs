@@ -1,5 +1,5 @@
 const Preview = () => {
-  return <div>Preview</div>
+  return <div>Card List</div>
 }
 
 export default Preview
