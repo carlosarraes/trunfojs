@@ -7,7 +7,7 @@ export const data = [
     armor: '19',
     speed: '335',
     rarity: 'legendary',
-    trunfo: false,
+    trunfo: true,
   },
   {
     name: 'Draven',
