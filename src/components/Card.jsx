@@ -1,23 +1,27 @@
-import {data} from '../data/data'
 import { GiCrossedSwords, GiAbdominalArmor, GiMagicPotion, GiWalkingBoot, GiHealthPotion } from 'react-icons/gi'
 
-const Card = () => {
+const Card = ({ data }) => {
   const {
     name,
     rarity,
+    image,
     hp,
     mana,
     attack,
     armor,
     trunfo,
-    speed
-  } = data[1]
+    speed,
+    fromSubmit,
+  } = data
   
   return (
   <section className={`flex flex-col shadow-xl max-w-sm rounded-md border-none p-2 ${rarity}`}>
     <div className='rounded-md'>
       <h3 className={`text-center font-bold ${rarity} text-white`}>{ name }</h3>
-      <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`} alt={name} className="w-72" />
+      {fromSubmit ?
+      <img src={image} alt={name} className="w-72" />
+      : <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`} alt={name} className="w-72" />
+      }
     </div>
     <div className={`${rarity}-back text-center space-y-2 mt-5`}>
       <div className='flex flex-col justify-center items-center space-y-2 my-3'>

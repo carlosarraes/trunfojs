@@ -14,6 +14,7 @@ function App() {
     armor: '',
     speed: '',
     image: '',
+    fromSubmit: true,
     rarity: 'normal',
     trunfo: false,
     saved: [],
