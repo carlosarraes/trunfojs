@@ -28,7 +28,7 @@ const Footer = () => {
             className="space-x-1 border p-2 rounded-r-md opacity-80 bg-gray-50 hover:opacity-100 duration-200"
           >
             <svg
-              ariaHidden="true"
+              aria-hidden="true"
               role="img"
               className="octicon octicon-code"
               viewBox="0 0 16 16"

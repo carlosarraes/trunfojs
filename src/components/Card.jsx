@@ -17,7 +17,7 @@ const Card = ({ data }) => {
   return (
   <section className={`flex flex-col shadow-xl max-w-sm rounded-md border-none p-2 ${rarity}`}>
     <div className='rounded-md'>
-      <h3 className={`text-center font-bold ${rarity} text-white`}>{ name }</h3>
+      <h3 className={`text-center mb-2 font-bold ${rarity} text-white`}>{ name }</h3>
       {fromSubmit ?
       <img src={image} alt={name} className="w-72" />
       : <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`} alt={name} className="w-72" />
@@ -47,7 +47,7 @@ const Card = ({ data }) => {
         </div>
       </div>
     </div>
-    <div className='mt-4'>
+    <div className='mt-2'>
       {trunfo && <h4 className='text-center text-grey-200 trunfo animate-pulse'>Super Trunfo</h4>}
     </div>
   </section>

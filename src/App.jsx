@@ -51,7 +51,7 @@ function App() {
   return (
     <>
       <Header />
-      <section className='flex justify-between gap-12' >  
+      <section className='flex justify-evenly gap-12' >  
         <Form
           data={data}
           handleChange={handleChange}
