@@ -58,11 +58,27 @@ const Form = ({ data, handleChange }) => {
             <input value={speed} onChange={handleChange} type="number" name="speed" id="speed" className="form-input w-3/4 border-0 border-b-2 text-center text-sm border-gray-200 focus:ring-0 focus:border-black" />
           </label>
         </section>
-        {/* Imagem */}
+        {/* Imagem e Select */}
         <label htmlFor="image" className='relative flex justify-between gap-3'>
           <AiOutlineLink className='pointer-events-none absolute top-3 right-2 w-6 h-6' />
           <span className="font-bold self-center">Imagem:</span>
           <input value={image} onChange={handleChange} type="text" name="image" className="form-input border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" />
+        </label>
+        <label htmlFor="rarity" className='flex justify-between gap-3'>
+          <span className="font-bold self-center">Raridade:</span>
+          <select
+            name="rarity"
+            id="rarity"
+            value={rarity}
+            onChange={handleChange} 
+            className="form-select border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black w-full text-center"
+          >
+            <option value="normal">Normal</option>
+            <option value="rare">Raro</option>
+            <option value="epic">Epico</option>
+            <option value="legendary">Lendario</option>
+          </select>
+          {/* <input  type="text" name="rarity" className="form-input border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" /> */}
         </label>
         {/* Trunfo e Botao */}
         <section className='flex gap-3 justify-between'>
