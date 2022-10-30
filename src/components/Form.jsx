@@ -1,7 +1,7 @@
 import { GiCrossedSwords, GiAbdominalArmor, GiMagicPotion, GiWalkingBoot, GiHealthPotion } from 'react-icons/gi'
 import { AiOutlineLink } from 'react-icons/ai'
 
-const Form = ({ data, handleChange }) => {
+const Form = ({ data, handleChange, handleSubmit, sbmtBtn }) => {
   const { 
     name,
     hp,
@@ -16,7 +16,7 @@ const Form = ({ data, handleChange }) => {
 
   return (
     <section className='max-w-sm'>
-      <form className="flex flex-col space-y-6">
+      <form className="flex flex-col space-y-6" onSubmit={handleSubmit}>
         <label htmlFor="name" className='flex justify-between gap-3'>
           <span className="font-bold self-center">Nome:</span>
           <input value={name} onChange={handleChange} type="text" name="name" className="form-input border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" />
@@ -86,7 +86,13 @@ const Form = ({ data, handleChange }) => {
             <span className='self-center'>Super Trunfo</span>
             <input value={trunfo} onChange={handleChange} type="checkbox" name="trunfo" id="trunfo" className='form-checkbox focus:ring-0 self-center' />
           </label>
-          <button className='border py-2 px-4 bg-green-500 shadow-md rounded-md text-gray-700 disabled:opacity-60' type="submit" disabled>Salvar</button>
+          <button
+            className='border py-2 px-4 bg-green-500 shadow-md rounded-md text-white opacity-90 disabled:opacity-40 enabled:hover:opacity-100 enabled:hover:bg-green-600 duration-300'
+            type="submit"
+            disabled={sbmtBtn}
+          >
+            Salvar
+          </button>
         </section>
       </form>
     </section>
