@@ -12,6 +12,7 @@ const Card = ({ data }) => {
     trunfo,
     speed,
     fromSubmit,
+    imgName,
   } = data
   
   return (
@@ -20,7 +21,9 @@ const Card = ({ data }) => {
       <h3 className={`text-center mb-2 font-bold ${rarity} text-white`}>{ name }</h3>
       {fromSubmit ?
       <img src={image} alt={name} className="w-72" />
-      : <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`} alt={name} className="w-72" />
+      : imgName ? 
+        <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${imgName}_0.jpg`}alt={name} className="w-72" /> 
+        : <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`} alt={name} className="w-72" />
       }
     </div>
     <div className={`${rarity}-back text-center space-y-2 mt-5`}>

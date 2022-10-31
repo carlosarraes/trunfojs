@@ -1,4 +1,4 @@
-import { data as data } from '../data/dataDummy'
+import { data as data } from '../data/data'
 import Card from './Card'
 
 const Preview = () => {
@@ -25,8 +25,11 @@ const Preview = () => {
         </label>
       </section>
       {/* Preview */}
-      <section className='flex flex-wrap gap-4'>
-        {data.map((card)=> <Card key={card.name} data={card} /> )}
+      <section className='flex flex-wrap justify-center gap-4 p-6'>
+        {data.map((card)=> {
+          card.rarity = 'epic'
+          return <Card key={card.name} data={card} />
+        })}
       </section>
     </section>  
   )
