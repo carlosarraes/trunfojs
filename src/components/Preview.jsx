@@ -20,7 +20,7 @@ const Preview = ({sortedData, handleFilter, handleRarityFilter, handleDelete, ha
           </select>
         </label>
         <label htmlFor="filterTrunfo" className="space-x-2 self-center">
-          <input type="checkbox" name="filterTrunfo" className="input-checkbox self-center focus:ring-0" onChange={handleSent} />
+          <input type="checkbox" id="filterTrunfo" className="input-checkbox self-center focus:ring-0" onChange={handleSent} />
           <span>Enviada pelo usuário</span>
         </label>
       </section>
