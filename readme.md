@@ -1,16 +1,16 @@
-# Trunfo Hérois
+# Trunfo ~~Hérois~~ LoL
 
-Refazendo o projeto da Trybe, com react typescrit e tailwind. Tentarei utilizar APIs para consumos de herois, porem, como não consegui (até agora) nenhuma API com herois e status interessantes, provavelmente irei fazer um hardcode de um `data.js`.
+Refazendo o projeto da Trybe, com react typescrit e tailwind. Abandonei a ideia de utilizar uma API, fiz hardcode dos dados, expliquei no ultimo paragrafo!
 
 ## To-Dos
 
 - [ ] Header
-- [ ] Form
-  - [ ] Estado
-  - [ ] Controlando Estado
-  - [ ] Verificação de Campos
-  - [ ] API ??
-- [ ] Visualizador de Carta
+- [x] Form
+  - [x] Estado
+  - [x] Controlando Estado
+  - [x] Verificação de Campos
+  - ~~[ ] API ??~~
+- [x] Visualizador de Carta
 - [ ] Cartas Salvas
   - [ ] Deletar cartas
   - [ ] Filtrar cartas
@@ -22,7 +22,7 @@ Refazendo o projeto da Trybe, com react typescrit e tailwind. Tentarei utilizar 
   - [ ] Controle de Cartas
   - [ ] Controle de Pontos
   - [ ] Restart Jogo
-- [ ] Footer
+- [x] Footer
 - [ ] Bonus: Dark Mode
 
 ## Regras do Trunfo
@@ -39,4 +39,8 @@ Refazendo o projeto da Trybe, com react typescrit e tailwind. Tentarei utilizar 
 - React
 - Javascript
 - Tailwind
-- Axios
+- ~~Axios~~
+
+#### API
+
+Infelizmente, tive q incluir a data da API no proprio aplicativo, eu ia utlizar o RapiAPI, q tem uma key, como o react é client-sided, eu nao tenho como colocar a key "segura" num .env, logo tive q abandonar a ideia da API de League of Legends.
