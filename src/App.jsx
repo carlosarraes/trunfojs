@@ -4,6 +4,8 @@ import Form from "./components/Form"
 import Card from "./components/Card"
 import Preview from "./components/Preview"
 import Footer from "./components/Footer"
+import { data as cardData } from './data/data'
+
 
 function App() {
   const [data, setData] = useState({
@@ -60,7 +62,7 @@ function App() {
         />
         <Card data={data} />
       </section>
-      <Preview />
+      <Preview cardData={cardData}/>
       <Footer />
     </>
   )
