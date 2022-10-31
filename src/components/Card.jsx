@@ -18,7 +18,7 @@ const Card = ({ data }) => {
   return (
   <section className={`flex flex-col shadow-xl max-w-sm rounded-md border-none p-2 ${rarity}`}>
     <div className='rounded-md'>
-      <h3 className={`text-center mb-2 font-bold ${rarity} text-white`}>{ name }</h3>
+      <h3 className={`text-center mb-2 font-bold ${rarity} text-black`}>{ name }</h3>
       {fromSubmit ?
       <img src={image} alt={name} className="w-72" />
       : imgName ? 

@@ -8,6 +8,16 @@ import { data as cardData } from './data/data'
 
 
 function App() {
+  const defineRarity = () => {
+    const rarity = (Math.floor(Math.random() * 100))+1;
+    if (rarity <= 60) return 'normal'
+    else if (rarity <= 80) return 'rare'
+    else if (rarity <= 94) return 'epic'
+    else if (rarity <= 100) return 'legendary'
+  };
+
+  const rarityData = cardData.map((card) => ({...card, rarity: defineRarity()}))
+
   const [data, setData] = useState({
     name: '',
     hp: '',
@@ -19,7 +29,8 @@ function App() {
     fromSubmit: true,
     rarity: 'normal',
     trunfo: false,
-    saved: [],
+    saved: rarityData,
+    query: rarityData,
   });
   const [sbmtBtn, setSbmtBtn] = useState(true);
 
@@ -47,8 +58,58 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
+    const { 
+      name,
+      hp,
+      mana,
+      attack,
+      armor,
+      speed,
+      trunfo,
+      rarity,
+      image,
+      query,
+      fromSubmit,
+    } = data;
+
+    const newEntry = {
+      name,
+      hp,
+      mana,
+      attack,
+      rarity,
+      armor,
+      speed,
+      trunfo,
+      image, 
+      fromSubmit,
+    }
+
+    setData((prevData) => ({...prevData , saved: [...query, newEntry] ,query: [...query, newEntry]}))
   };
+
+  
+  const handleFilter = (e) => {
+    const { value } = e.target;
+    const { query } = data;
+    const filteredSearch = query.filter((card) => card.name.includes(value));
+    setData(prevState => ({...prevState, saved: filteredSearch}))
+  };
+  
+  const handleRarityFilter = (e) => {
+    const { value } = e.target;
+    const { query } = data;
+    const filteredSearch = query.filter((card) => card.rarity === value);
+    if (value === 'todos'){
+      setData(prevState => ({...prevState, saved: query}))
+    } else {
+      setData(prevState => ({...prevState, saved: filteredSearch}))
+    }
+  }
+  
+  const { saved } = data;
+
+  const sortedSave = saved.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
 
   return (
     <>
@@ -62,7 +123,7 @@ function App() {
         />
         <Card data={data} />
       </section>
-      <Preview cardData={cardData}/>
+      <Preview sortedData={sortedSave} handleFilter={handleFilter} handleRarityFilter={handleRarityFilter} />
       <Footer />
     </>
   )

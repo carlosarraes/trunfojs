@@ -1,30 +1,18 @@
-import { useState } from 'react'
 import Card from './Card'
 
-const Preview = ({cardData}) => {
-  const [previewData, setPreviewData] = useState([...cardData]);
-
-  const defineRarity = () => {
-    const rarity = (Math.floor(Math.random() * 10))+1;
-    if (rarity === 10) return 'legendary'
-    else if (rarity <= 4) return 'normal'
-    else if (rarity <= 7) return 'rare'
-    else if (rarity <= 9) return 'epic'
-  };
-
-  const newData = previewData.map((card) => ({...card, rarity: defineRarity()}))
-
+const Preview = ({sortedData, handleFilter, handleRarityFilter}) => {
   return (
     <section className="flex flex-col justify-between gap-4 mt-6">
       {/* Inptus */}
       <section className="flex justify-around">
         <div className="space-x-2">
           <span className="text-md self-center">Filtros:</span>
-          <input type="text" className="form-input"/>
+          <input type="text" className="form-input" name='filtroName' onChange={handleFilter} />
         </div>
         <label htmlFor="filtroRaridade" className="space-x-2 self-center">
           <span>Raridade:</span>
-          <select name="filtroRaridade" id="filtroRaridade">
+          <select name="filtroRaridade" id="filtroRaridade" onChange={handleRarityFilter} >
+            <option value="todos">Todos</option>
             <option value="normal">Normal</option>
             <option value="rare">Raro</option>
             <option value="epic">Epico</option>
@@ -38,7 +26,7 @@ const Preview = ({cardData}) => {
       </section>
       {/* Preview */}
       <section className='flex flex-wrap justify-center gap-4 p-6'>
-        {newData.map((card)=> {
+        {sortedData.map((card)=> {
           return <Card key={card.name} data={card} />
         })}
       </section>
