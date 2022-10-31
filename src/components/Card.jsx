@@ -1,6 +1,7 @@
 import { GiCrossedSwords, GiAbdominalArmor, GiMagicPotion, GiWalkingBoot, GiHealthPotion } from 'react-icons/gi'
+import {TiDelete} from 'react-icons/ti'
 
-const Card = ({ data }) => {
+const Card = ({ data, handleDelete }) => {
   const {
     name,
     rarity,
@@ -9,8 +10,8 @@ const Card = ({ data }) => {
     mana,
     attack,
     armor,
-    trunfo,
     speed,
+    fromPreview,
     fromSubmit,
     imgName,
   } = data
@@ -19,8 +20,8 @@ const Card = ({ data }) => {
   <section className={`flex flex-col shadow-xl max-w-sm rounded-md border-none p-2 ${rarity}`}>
     <div className='rounded-md'>
       <h3 className={`text-center mb-2 font-bold ${rarity} text-black`}>{ name }</h3>
-      {fromSubmit ?
-      <img src={image} alt={name} className="w-72" />
+      {fromPreview ?
+      <img src={image} alt={name} className="w-72 h-40" />
       : imgName ? 
         <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${imgName}_0.jpg`}alt={name} className="w-72" /> 
         : <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${name}_0.jpg`} alt={name} className="w-72" />
@@ -50,8 +51,8 @@ const Card = ({ data }) => {
         </div>
       </div>
     </div>
-    <div className='mt-2'>
-      {trunfo && <h4 className='text-center text-grey-200 trunfo animate-pulse'>Super Trunfo</h4>}
+    <div className='text-center mt-3'>
+      {fromSubmit && <button onClick={(e)=> handleDelete(e, name)}> <TiDelete className='self-center text-red-600 text-2xl' /> </button> }
     </div>
   </section>
   )

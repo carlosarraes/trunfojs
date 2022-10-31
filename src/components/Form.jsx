@@ -11,7 +11,6 @@ const Form = ({ data, handleChange, handleSubmit, sbmtBtn }) => {
     speed,
     image,
     rarity,
-    trunfo 
   } = data;
 
   return (
@@ -81,13 +80,9 @@ const Form = ({ data, handleChange, handleSubmit, sbmtBtn }) => {
           {/* <input  type="text" name="rarity" className="form-input border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black" /> */}
         </label>
         {/* Trunfo e Botao */}
-        <section className='flex gap-3 justify-between'>
-          <label htmlFor="trunfo" className='flex gap-3'>
-            <span className='self-center'>Super Trunfo</span>
-            <input value={trunfo} onChange={handleChange} type="checkbox" name="trunfo" id="trunfo" className='form-checkbox focus:ring-0 self-center' />
-          </label>
+        <section className='text-center'>
           <button
-            className='border py-2 px-4 bg-green-500 shadow-md rounded-md text-white opacity-90 disabled:opacity-40 enabled:hover:opacity-100 enabled:hover:bg-green-600 duration-300'
+            className='border w-full py-2 px-4 bg-green-500 shadow-md rounded-md text-white opacity-90 disabled:opacity-40 enabled:hover:opacity-100 enabled:hover:bg-green-600 duration-300'
             type="submit"
             disabled={sbmtBtn}
           >

@@ -12,10 +12,11 @@ Refazendo o projeto da Trybe, com react typescrit e tailwind. Abandonei a ideia 
   - ~~[ ] API ??~~
 - [x] Visualizador de Carta
 - [ ] Cartas Salvas
+  - [x] Adicionar cartas
   - [ ] Deletar cartas
-  - [ ] Filtrar cartas
-    - [ ] Filtro por nome
-    - [ ] Filtro por raridade
+  - [x] Filtrar cartas
+    - [x] Filtro por nome
+    - [x] Filtro por raridade
     - [ ] Filtro por Super Trunfo
 - [ ] Jogo
   - [ ] Iniciar Jogo

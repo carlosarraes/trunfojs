@@ -26,9 +26,8 @@ function App() {
     armor: '',
     speed: '',
     image: '',
-    fromSubmit: true,
+    fromPreview: true,
     rarity: 'normal',
-    trunfo: false,
     saved: rarityData,
     query: rarityData,
   });
@@ -65,11 +64,9 @@ function App() {
       attack,
       armor,
       speed,
-      trunfo,
       rarity,
       image,
       query,
-      fromSubmit,
     } = data;
 
     const newEntry = {
@@ -80,9 +77,8 @@ function App() {
       rarity,
       armor,
       speed,
-      trunfo,
       image, 
-      fromSubmit,
+      fromSubmit: true,
     }
 
     setData((prevData) => ({...prevData , saved: [...query, newEntry] ,query: [...query, newEntry]}))
@@ -107,6 +103,24 @@ function App() {
     }
   }
   
+  const handleDelete = (e, str) => {
+    const { query } = data;
+    const newQuery = query.filter((card) => card.name !== str)
+    setData(prevState => ({...prevState, saved: newQuery, query: newQuery}))
+  }
+
+  const handleSent = (e) => {
+    const { query } = data;
+    const { checked } = e.target;
+    let newQuery = [];
+    if (checked) {
+      newQuery = query.filter((card) => card.fromSubmit === checked)
+    } else {
+      newQuery = query.filter((card) => card.fromSubmit !== checked)
+    }
+    setData(prevState => ({...prevState, saved: newQuery}))
+  };
+
   const { saved } = data;
 
   const sortedSave = saved.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase() ? 1 : -1);
@@ -114,16 +128,16 @@ function App() {
   return (
     <>
       <Header />
-      <section className='flex justify-evenly gap-12' >  
+      <section className='flex justify-center items-center gap-12 flex-col md:flex-row md:justify-evenly' >  
         <Form
           data={data}
           handleChange={handleChange}
           handleSubmit={handleSubmit}
           sbmtBtn={sbmtBtn}
         />
-        <Card data={data} />
+        <Card data={data} handleDelete={handleDelete}/>
       </section>
-      <Preview sortedData={sortedSave} handleFilter={handleFilter} handleRarityFilter={handleRarityFilter} />
+      <Preview sortedData={sortedSave} handleFilter={handleFilter} handleRarityFilter={handleRarityFilter} handleDelete={handleDelete} handleSent={handleSent} />
       <Footer />
     </>
   )

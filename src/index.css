@@ -12,6 +12,10 @@ body {
   align-items: center;
 }
 
+#root {
+  max-width: 100rem;
+}
+
 .legendary {
   @apply bg-gradient-to-r from-yellow-600 via-yellow-300 to-yellow-800;
 }
@@ -42,12 +46,4 @@ body {
 
 .normal-back {
   @apply bg-gray-100;
-}
-
-.trunfo {
-  text-shadow:
-    -0.5px -0.5px 0 #fff,  
-    0.5px -0.5px 0 #fff,
-    -0.5px 0.5px 0 #fff,
-    0.5px 0.5px 0 #fff;
 }
